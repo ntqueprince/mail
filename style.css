@@ -1,0 +1,28 @@
+:root{
+  --bg:#f3f4f6; --card:#fff; --accent:#2563eb; --green:#16a34a; --orange:#f97316; --muted:#94a3b8;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,system-ui,Segoe UI,Roboto,'Helvetica Neue',Arial;background:var(--bg);color:#0f172a}
+.wrap{max-width:1050px;margin:28px auto;padding:26px;background:var(--card);border-radius:14px;box-shadow:0 12px 30px rgba(2,6,23,0.08)}
+h1{text-align:center;color:var(--accent);margin:0 0 18px;font-weight:700}
+label{display:block;margin-top:14px;font-weight:600;color:#0f172a}
+select,input,button,textarea{width:100%;padding:12px;border-radius:10px;border:1px solid #cbd5e1;font-size:15px}
+select:focus,input:focus,textarea:focus{outline:none;border-color:var(--accent);box-shadow:0 0 6px rgba(37,99,235,0.15)}
+.controls{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+@media(max-width:720px){.controls{grid-template-columns:1fr}}
+button{background:linear-gradient(90deg,var(--accent),#3b82f6);color:#fff;border:none;font-weight:700;cursor:pointer;margin-top:12px}
+button:hover{opacity:0.95}
+.previewHeader{padding:10px;border-radius:8px;margin-top:18px;font-weight:700;color:#fff}
+.previewHeader.endorsement{background:var(--accent)}
+.previewHeader.refund{background:var(--green)}
+.previewHeader.delay{background:var(--orange)}
+.previewHeader.trail{background:#6b7280}
+#mailPreview{min-height:300px;border-radius:10px;border:1px solid var(--muted);padding:14px;background:#fff;margin-top:8px;white-space:pre-wrap;overflow:auto}
+.small{font-size:13px;color:#475569;margin-top:6px}
+.muted{color:var(--muted)}
+.subtitle{margin-top:18px;font-weight:700;font-size:18px;text-align:center}
+.subtitle span{background:linear-gradient(90deg,red,orange,yellow,green,blue,indigo,violet);-webkit-background-clip:text;color:transparent}
+.row{display:flex;gap:12px}
+@media(max-width:720px){.row{flex-direction:column}}
+.hint{font-size:13px;color:var(--muted);margin-top:6px}
+.toast{position:fixed;right:24px;bottom:24px;background:var(--accent);color:#fff;padding:12px 16px;border-radius:10px;opacity:0;transition:all .35s}

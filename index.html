@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>PolicyBazaar Mail Generator — Updated Refunds</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <h1>PolicyBazaar Mail Generator</h1>
+
+  <label for="category">Select Category:</label>
+  <select id="category" aria-label="Select category">
+    <option value="">-- Select Category --</option>
+    <option value="endorsement">Endorsement / Correction</option>
+    <option value="trail">Trail Mail</option>
+    <option value="delay">Delay Mail</option>
+    <option value="refund_with_details">Refund — With Previous Date & Amount</option>
+    <option value="refund_standard">Refund — Standard</option>
+    <option value="refund_tat">Refund TAT (Update)</option>
+    <option value="unsubscribe">Unsubscribe</option>
+    <option value="not_contactable">Not Contactable</option>
+    <option value="endorsement_share">Endorsement Share</option>
+    <option value="ncb_confirmation">NCB Confirmation</option>
+    <option value="video_tat">Video TAT</option>
+    <option value="closure">Closure Mail</option>
+    <option value="odo_meter">ODO Meter Reading in Renewal</option>
+  </select>
+
+  <label id="subLabel" for="subIssue" style="display:none;margin-top:12px">Select Endorsement Sub-Issue:</label>
+  <select id="subIssue" style="display:none">
+    <option value="">-- Select Sub-Issue --</option>
+  </select>
+  <div class="hint" id="subHint" style="display:none">Choose the exact change (e.g., Registration Number)</div>
+
+  <div id="refundBox" style="display:none;margin-top:12px">
+    <label for="refundAmount">Refund Amount (₹) — enter amount (numbers only):</label>
+    <input type="number" id="refundAmount" placeholder="e.g. 6597">
+
+    <label for="refundDate" style="margin-top:8px">Refund Process Date:</label>
+    <input type="date" id="refundDate">
+    <div class="small muted">* Format shown in mail as DD/MMM/YYYY (e.g. 11 Sep 2025)</div>
+  </div>
+
+  <div id="mailDateRow" style="margin-top:12px">
+    <label for="mailDate">Select Mail Date (used to calculate TAT where applicable):</label>
+    <input type="date" id="mailDate">
+    <div class="small muted">If empty, today's date will be used to compute TAT.</div>
+  </div>
+
+  <div class="row" style="margin-top:16px">
+    <button id="generateBtn" style="flex:1">Generate Mail</button>
+    <button id="copyBtn" style="flex:1;background:linear-gradient(90deg,#06b6d4,#2563eb)">Copy to Clipboard</button>
+  </div>
+
+  <div id="previewHeader" class="previewHeader endorsement">Mail Preview</div>
+  <div id="mailPreview" contenteditable="true" aria-label="Mail preview">Select category and click "Generate Mail" to compose.</div>
+
+  <div class="subtitle"><span>Created by Shivang</span></div>
+</div>
+
+<div id="toast" class="toast">Copied to clipboard</div>
+
+<script src="script.js"></script>
+</body>
+</html>
