@@ -4,12 +4,13 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>PolicyBazaar Mail Generator — Updated Refunds</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="wrap">
   <h1>PolicyBazaar Mail Generator</h1>
+  <div class="subtitle"><span>Created by Shivang</span></div>
 
   <label for="category">Select Category:</label>
   <select id="category" aria-label="Select category">
@@ -17,9 +18,8 @@
     <option value="endorsement">Endorsement / Correction</option>
     <option value="trail">Trail Mail</option>
     <option value="delay">Delay Mail</option>
-    <option value="refund_with_details">Refund — With Previous Date & Amount</option>
-    <option value="refund_standard">Refund — Standard</option>
-    <option value="refund_tat">Refund TAT (Update)</option>
+    <option value="refund_tat">Refund — TAT</option>
+    <option value="refund_success">Refund — Success</option>
     <option value="unsubscribe">Unsubscribe</option>
     <option value="not_contactable">Not Contactable</option>
     <option value="endorsement_share">Endorsement Share</option>
@@ -39,8 +39,10 @@
     <label for="refundAmount">Refund Amount (₹) — enter amount (numbers only):</label>
     <input type="number" id="refundAmount" placeholder="e.g. 6597">
 
-    <label for="refundDate" style="margin-top:8px">Refund Process Date:</label>
-    <input type="date" id="refundDate">
+    <div id="refundDateWrapper" style="margin-top:8px; cursor:pointer" onclick="document.getElementById('refundDate').showPicker()">
+      <label for="refundDate">Refund Process Date:</label>
+      <input type="date" id="refundDate">
+    </div>
     <div class="small muted">* Format shown in mail as DD/MMM/YYYY (e.g. 11 Sep 2025)</div>
   </div>
 
@@ -57,8 +59,6 @@
 
   <div id="previewHeader" class="previewHeader endorsement">Mail Preview</div>
   <div id="mailPreview" contenteditable="true" aria-label="Mail preview">Select category and click "Generate Mail" to compose.</div>
-
-  <div class="subtitle"><span>Created by Shivang</span></div>
 </div>
 
 <div id="toast" class="toast">Copied to clipboard</div>
